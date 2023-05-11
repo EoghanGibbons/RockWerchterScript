@@ -20,12 +20,13 @@ function addGlobalStyle(css) {
 addGlobalStyle(".selected-item-act {background-color: orange !important; color: white !important;}");
 
 $('a').on("click", function(e) {
-    e.preventDefault();
     let target = e.currentTarget;
-
-    if (target.classList.contains("selected-item-act")) {
-        target.classList.remove("selected-item-act");
-    } else {
-        target.classList.add("selected-item-act");
+    if (target.classList.contains("act-schedule__acts-act")) {
+        e.preventDefault();
+        if (target.classList.contains("selected-item-act")) {
+            target.classList.remove("selected-item-act");
+        } else {
+            target.classList.add("selected-item-act");
+        }
     }
 });
